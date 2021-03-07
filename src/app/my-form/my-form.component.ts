@@ -11,10 +11,13 @@ export class MyFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
+      name:['',Validators.required],
       phoneNo: [''],
-      email: ['', Validators.email],
+      email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      postalAddress:['',Validators.required],
+      comment:['',Validators.required]
     });
    }
 
